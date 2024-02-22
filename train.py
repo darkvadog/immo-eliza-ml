@@ -1,7 +1,8 @@
 import joblib
 import pandas as pd
+from sklearn.ensemble import HistGradientBoostingRegressor # NEW
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression # OLD
 from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
@@ -13,9 +14,17 @@ def train():
     data = pd.read_csv("data/properties.csv")
 
     # Define features to use
-    num_features = ["nbr_frontages"]
-    fl_features = ["fl_terrace"]
-    cat_features = ["equipped_kitchen"]
+    num_features = [
+        'total_area_sqm',
+        'nbr_bedrooms',
+        'latitude',
+        'longitude',]
+    fl_features = [
+        'fl_garden',
+        'fl_terrace',
+        'primary_energy_consumption_sqm'
+        ]
+    cat_features = ["subproperty_type"]
 
     # Split the data into features and target
     X = data[num_features + fl_features + cat_features]
@@ -57,10 +66,10 @@ def train():
 
     print(f"Features: \n {X_train.columns.tolist()}")
 
-    # Train the model
-    model = LinearRegression()
+    # Train the model using HistGradientBoostingRegressor
+    model = HistGradientBoostingRegressor()
     model.fit(X_train, y_train)
-
+    
     # Evaluate the model
     train_score = r2_score(y_train, model.predict(X_train))
     test_score = r2_score(y_test, model.predict(X_test))
