@@ -24,7 +24,8 @@ KNN accuracy improvements were slow despite adding features while finding neighb
 - Test R² score: 0.78 (generalizes well to unseen data).
 
 #### Visualizations:
-Consider including visualizations of feature importance, residual plots, or other relevant diagnostics.
+![QQ-plot of residual errors (HGB_model)](https://ibb.co/kHmPFG8)
+The QQ-plot suggest that the distribution is heavy-tailed.
 
 ### Limitations:
 - The model is trained on a specific dataset and may not generalize well to other geographical regions or market conditions;
