@@ -3,13 +3,13 @@
 This project predicts house prices in a specific region based on various property features. The goal is to develop a model that can accurately estimate the market value of a house given its characteristics.
 
 ### Data
-#### Input dataset: properties.csv containing information about individual houses.
-#### Target variable: price: the actual selling price of the house.
+Input dataset: properties.csv containing information about individual houses.
+Target variable: price: the actual selling price of the house.
 
 ### Features:
-#### Numerical features: total area, number of bedrooms, latitude, longitude, zip code, primary energy consumption, surface land area.
-#### Boolean features: presence of garden, terrace, swimming pool, and flood zone.
-#### Categorical feature: property type.
+Numerical features: total area, number of bedrooms, latitude, longitude, zip code, primary energy consumption, surface land area.
+Boolean features: presence of garden, terrace, swimming pool, and flood zone.
+Categorical feature: property type.
 
 ## Model details
 ### Models tested:
