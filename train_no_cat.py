@@ -13,25 +13,25 @@ def train():
     # Load the data
     data = pd.read_csv("data/properties.csv")
 
-    # Define features to use
+     # Define features to use
     num_features = [
         'total_area_sqm',
         'nbr_bedrooms',
         'latitude',
         'longitude',
+        'zip_code',
         'primary_energy_consumption_sqm',
         'surface_land_sqm',
-        'terrace_sqm',
-        'garden_sqm'
         ]
     fl_features = [
         'fl_garden',
-        'fl_terrace'
+        'fl_terrace',
+        'fl_swimming_pool',
+        'fl_floodzone'
         ]
-    cat_features = [""]
-
+    
     # Split the data into features and target
-    X = data[num_features + fl_features + cat_features]
+    X = data[num_features + fl_features]
     y = data["price"]
 
     # Split the data into training and testing sets
@@ -45,25 +45,17 @@ def train():
     X_train[num_features] = imputer.transform(X_train[num_features])
     X_test[num_features] = imputer.transform(X_test[num_features])
 
-    # Convert categorical columns with one-hot encoding using OneHotEncoder
-    enc = OneHotEncoder()
-    enc.fit(X_train[cat_features])
-    X_train_cat = enc.transform(X_train[cat_features]).toarray()
-    X_test_cat = enc.transform(X_test[cat_features]).toarray()
-
     # Combine the numerical and one-hot encoded categorical columns
     X_train = pd.concat(
         [
-            X_train[num_features + fl_features].reset_index(drop=True),
-            pd.DataFrame(X_train_cat, columns=enc.get_feature_names_out()),
+            X_train[num_features + fl_features].reset_index(drop=True)
         ],
         axis=1,
     )
 
     X_test = pd.concat(
         [
-            X_test[num_features + fl_features].reset_index(drop=True),
-            pd.DataFrame(X_test_cat, columns=enc.get_feature_names_out()),
+            X_test[num_features + fl_features].reset_index(drop=True)
         ],
         axis=1,
     )
@@ -85,10 +77,8 @@ def train():
         "features": {
             "num_features": num_features,
             "fl_features": fl_features,
-            "cat_features": cat_features,
         },
         "imputer": imputer,
-        "enc": enc,
         "model": model,
     }
     joblib.dump(artifacts, "models/artifacts.joblib")
