@@ -13,8 +13,10 @@ This project predicts house prices in a specific region based on various propert
 
 ## Model details
 ### Models tested:
-- LinearRegression (baseline);
-- HistGradientBoostingRegressor (final chosen).
+- LinearRegression (LR_baseline_model);
+- K-Nearest Neighbors (KNN_test_model);
+- HistGradientBoostingRegressor (HGB_chosen_model).
+KNN accuracy improvements were slow despite adding features while finding neighbors for new data point proved difficult (optimized_k=300 according to GridSearchCV simulations). HGB achieves better accuracy than kNN with less features. Hyperparameter tuning is crucial: Careful tuning of hyperparameters is essential for optimal performance.
 
 ### Performance
 #### Metrics:
@@ -42,6 +44,3 @@ pandas, sklearn, joblib
 
 ## Maintainers
 Philippe Montel (philippe.montel75@gmail.com)
-
-## Additional notes
-Consider adding information about hyperparameter tuning, if applicable.
