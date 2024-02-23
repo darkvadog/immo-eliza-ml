@@ -18,13 +18,20 @@ def train():
         'total_area_sqm',
         'nbr_bedrooms',
         'latitude',
-        'longitude',]
+        'longitude',
+        'zip_code',
+        'primary_energy_consumption_sqm',
+        'surface_land_sqm',
+        ]
     fl_features = [
         'fl_garden',
         'fl_terrace',
-        'primary_energy_consumption_sqm'
+        'fl_swimming_pool',
+        'fl_floodzone'
         ]
-    cat_features = ["subproperty_type"]
+    cat_features = [
+        'subproperty_type'
+        ]
 
     # Split the data into features and target
     X = data[num_features + fl_features + cat_features]
