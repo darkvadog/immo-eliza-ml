@@ -30,7 +30,7 @@ def train():
         'fl_floodzone'
         ]
     cat_features = [
-        'subproperty_type'
+        'property_type'
         ]
 
     # Split the data into features and target
