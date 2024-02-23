@@ -25,12 +25,12 @@ KNN accuracy improvements were slow despite adding features while finding neighb
 
 #### Visualizations:
 ![QQ-plot of residual errors (HGB_model)](https://ibb.co/kHmPFG8)
-The QQ-plot suggest that the distribution is heavy-tailed.
 
 ### Limitations:
 - The model is trained on a specific dataset and may not generalize well to other geographical regions or market conditions;
 - The model relies on the accuracy and completeness of the input data. Errors or missing values in the features can affect the predictions;
-- The R² score indicates a good fit, but there may still be outliers or individual predictions with significant errors.
+- The R² score indicates a good fit, but there may still be outliers or individual predictions with significant errors;
+- The QQ-plot suggest that the distribution is heavy-tailed, stressing out the need for a larger dataset for training. 
 
 ## Usage
 ### Dependencies:
