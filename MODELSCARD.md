@@ -26,7 +26,7 @@ KNN accuracy improvements were slow despite adding features while finding neighb
 #### Visualizations:
 Consider including visualizations of feature importance, residual plots, or other relevant diagnostics.
 
-### Limitations
+### Limitations:
 - The model is trained on a specific dataset and may not generalize well to other geographical regions or market conditions;
 - The model relies on the accuracy and completeness of the input data. Errors or missing values in the features can affect the predictions;
 - The R² score indicates a good fit, but there may still be outliers or individual predictions with significant errors.
@@ -38,9 +38,9 @@ pandas, sklearn, joblib
 ### Scripts:
 - train.py: script to train the model and save artifacts;
 - Prediction:
-* Load the saved artifacts (artifacts.joblib) using joblib.load;
-* Preprocess new data using the same imputer and one-hot encoder (imputer and enc objects);
-* Make predictions using the trained model (model).
+    * Load the saved artifacts (artifacts.joblib) using joblib.load;
+    * Preprocess new data using the same imputer and one-hot encoder (imputer and enc objects);
+    * Make predictions using the trained model (model).
 
 ## Maintainers
 Philippe Montel (philippe.montel75@gmail.com)
