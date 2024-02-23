@@ -123,8 +123,8 @@ def train():
     ax.plot(theoretical_quantiles, sorted_x, color='red', linestyle='dashed', label='Theoretical Quantiles')
 
     # Remove default axes and add custom labels
-    ax.set_xlabel("Quantiles théoriques (normale)")
-    ax.set_ylabel("Quantiles des erreurs résiduelles")
+    ax.set_xlabel("Theoretical quantiles")
+    ax.set_ylabel("Residual error quantiles")
     
     # Add legend (optional)
     # ax.legend()
