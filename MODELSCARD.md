@@ -4,7 +4,7 @@ This project predicts house prices in a specific region based on various propert
 
 ### Data
 Input dataset: properties.csv containing information about individual houses.
-Target variable: price: the actual selling price of the house.
+\nTarget variable: price: the actual selling price of the house.
 
 ### Features:
 Numerical features: total area, number of bedrooms, latitude, longitude, zip code, primary energy consumption, surface land area.
