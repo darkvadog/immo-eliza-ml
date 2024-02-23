@@ -19,11 +19,11 @@ This project predicts house prices in a specific region based on various propert
 KNN accuracy improvements were slow despite adding features while finding neighbors for new data point proved difficult (optimized_k=300 according to GridSearchCV simulations). HGB achieves better accuracy than kNN with less features. Hyperparameter tuning is crucial: Careful tuning of hyperparameters is essential for optimal performance.
 
 ### Performance
-#### Metrics:
+#### Metrics: R²
 - Train R² score: 0.82 (represents 82% of the variance in the target variable explained by the model);
 - Test R² score: 0.78 (generalizes well to unseen data).
 
-#### Visualizations:
+#### Visualizations to compare the shapes of predict and trained distributions
 <p align="center"><img src="\Notebooks\QQ-Plot_1.png" alt="QQ-plot of residual errors (HGB_model)"/> </p>
 
 ### Limitations:
